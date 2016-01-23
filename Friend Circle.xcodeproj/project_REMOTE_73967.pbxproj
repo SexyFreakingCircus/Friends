@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01FE3F9C1C54250600E37313 /* WhatToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE3F9B1C54250600E37313 /* WhatToDoViewController.swift */; };
+		01FE3FA41C54408800E37313 /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE3FA31C54408800E37313 /* OptionsTableViewCell.swift */; };
 		27718E731C5415D3008C42E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E721C5415D3008C42E4 /* AppDelegate.swift */; };
 		27718E751C5415D3008C42E4 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E741C5415D3008C42E4 /* FriendViewController.swift */; };
 		27718E781C5415D3008C42E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27718E761C5415D3008C42E4 /* Main.storyboard */; };
 		27718E7B1C5415D3008C42E4 /* Friend_Circle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27718E791C5415D3008C42E4 /* Friend_Circle.xcdatamodeld */; };
 		27718E7D1C5415D3008C42E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27718E7C1C5415D3008C42E4 /* Assets.xcassets */; };
 		27718E801C5415D3008C42E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27718E7E1C5415D3008C42E4 /* LaunchScreen.storyboard */; };
-		27718E881C5425D0008C42E4 /* TableOfFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E871C5425D0008C42E4 /* TableOfFriendsViewController.swift */; };
-		27718E8A1C54267B008C42E4 /* TableOfFriendsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E891C54267B008C42E4 /* TableOfFriendsViewCell.swift */; };
-		27718E8E1C54311F008C42E4 /* AddNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E8D1C54311F008C42E4 /* AddNewFriendViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01FE3F9B1C54250600E37313 /* WhatToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatToDoViewController.swift; sourceTree = "<group>"; };
+		01FE3FA31C54408800E37313 /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
 		27718E6F1C5415D3008C42E4 /* Friend Circle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Friend Circle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27718E721C5415D3008C42E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27718E741C5415D3008C42E4 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
@@ -27,9 +28,6 @@
 		27718E7C1C5415D3008C42E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27718E7F1C5415D3008C42E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27718E811C5415D3008C42E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27718E871C5425D0008C42E4 /* TableOfFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfFriendsViewController.swift; sourceTree = "<group>"; };
-		27718E891C54267B008C42E4 /* TableOfFriendsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfFriendsViewCell.swift; sourceTree = "<group>"; };
-		27718E8D1C54311F008C42E4 /* AddNewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewFriendViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,34 +60,17 @@
 		27718E711C5415D3008C42E4 /* Friend Circle */ = {
 			isa = PBXGroup;
 			children = (
-				27718E8B1C542880008C42E4 /* ViewControllers */,
-				27718E8C1C54288F008C42E4 /* Cells */,
 				27718E721C5415D3008C42E4 /* AppDelegate.swift */,
+				27718E741C5415D3008C42E4 /* FriendViewController.swift */,
 				27718E761C5415D3008C42E4 /* Main.storyboard */,
+				01FE3F9B1C54250600E37313 /* WhatToDoViewController.swift */,
 				27718E7C1C5415D3008C42E4 /* Assets.xcassets */,
 				27718E7E1C5415D3008C42E4 /* LaunchScreen.storyboard */,
 				27718E811C5415D3008C42E4 /* Info.plist */,
 				27718E791C5415D3008C42E4 /* Friend_Circle.xcdatamodeld */,
+				01FE3FA31C54408800E37313 /* OptionsTableViewCell.swift */,
 			);
 			path = "Friend Circle";
-			sourceTree = "<group>";
-		};
-		27718E8B1C542880008C42E4 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				27718E741C5415D3008C42E4 /* FriendViewController.swift */,
-				27718E871C5425D0008C42E4 /* TableOfFriendsViewController.swift */,
-				27718E8D1C54311F008C42E4 /* AddNewFriendViewController.swift */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		27718E8C1C54288F008C42E4 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				27718E891C54267B008C42E4 /* TableOfFriendsViewCell.swift */,
-			);
-			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,9 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27718E8E1C54311F008C42E4 /* AddNewFriendViewController.swift in Sources */,
-				27718E881C5425D0008C42E4 /* TableOfFriendsViewController.swift in Sources */,
-				27718E8A1C54267B008C42E4 /* TableOfFriendsViewCell.swift in Sources */,
+				01FE3FA41C54408800E37313 /* OptionsTableViewCell.swift in Sources */,
+				01FE3F9C1C54250600E37313 /* WhatToDoViewController.swift in Sources */,
 				27718E7B1C5415D3008C42E4 /* Friend_Circle.xcdatamodeld in Sources */,
 				27718E751C5415D3008C42E4 /* FriendViewController.swift in Sources */,
 				27718E731C5415D3008C42E4 /* AppDelegate.swift in Sources */,
