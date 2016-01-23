@@ -43,7 +43,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OptionsCell" rowHeight="84" id="fdY-YZ-lCE" customClass="OptionsTableViewCell" customModule="Friend_Circle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="84"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fdY-YZ-lCE" id="xXj-pC-XBZ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="83.5"/>
@@ -63,8 +63,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="OptionsCell" destination="WGv-3h-NWE" id="RbU-Qh-kFx"/>
-                                            <outlet property="optionsImage" destination="fYz-SM-x8a" id="Z31-Dr-clY"/>
+                                            <outlet property="OptionsCell" destination="WGv-3h-NWE" id="vtZ-95-ay6"/>
+                                            <outlet property="optionsImage" destination="fYz-SM-x8a" id="Xa7-Ww-oTn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

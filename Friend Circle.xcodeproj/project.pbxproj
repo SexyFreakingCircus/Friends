@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01FE3F9C1C54250600E37313 /* WhatToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE3F9B1C54250600E37313 /* WhatToDoViewController.swift */; };
-		01FE3FA21C542D7400E37313 /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE3FA11C542D7400E37313 /* OptionsTableViewCell.swift */; };
+		01FE3FA41C54408800E37313 /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE3FA31C54408800E37313 /* OptionsTableViewCell.swift */; };
 		27718E731C5415D3008C42E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E721C5415D3008C42E4 /* AppDelegate.swift */; };
 		27718E751C5415D3008C42E4 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E741C5415D3008C42E4 /* FriendViewController.swift */; };
 		27718E781C5415D3008C42E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27718E761C5415D3008C42E4 /* Main.storyboard */; };
@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		01FE3F9B1C54250600E37313 /* WhatToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatToDoViewController.swift; sourceTree = "<group>"; };
-		01FE3FA11C542D7400E37313 /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsTableViewCell.swift; path = ../OptionsTableViewCell.swift; sourceTree = "<group>"; };
+		01FE3FA31C54408800E37313 /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
 		27718E6F1C5415D3008C42E4 /* Friend Circle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Friend Circle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27718E721C5415D3008C42E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27718E741C5415D3008C42E4 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +60,6 @@
 		27718E711C5415D3008C42E4 /* Friend Circle */ = {
 			isa = PBXGroup;
 			children = (
-				01FE3FA11C542D7400E37313 /* OptionsTableViewCell.swift */,
 				27718E721C5415D3008C42E4 /* AppDelegate.swift */,
 				27718E741C5415D3008C42E4 /* FriendViewController.swift */,
 				27718E761C5415D3008C42E4 /* Main.storyboard */,
@@ -69,6 +68,7 @@
 				27718E7E1C5415D3008C42E4 /* LaunchScreen.storyboard */,
 				27718E811C5415D3008C42E4 /* Info.plist */,
 				27718E791C5415D3008C42E4 /* Friend_Circle.xcdatamodeld */,
+				01FE3FA31C54408800E37313 /* OptionsTableViewCell.swift */,
 			);
 			path = "Friend Circle";
 			sourceTree = "<group>";
@@ -144,7 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01FE3FA21C542D7400E37313 /* OptionsTableViewCell.swift in Sources */,
+				01FE3FA41C54408800E37313 /* OptionsTableViewCell.swift in Sources */,
 				01FE3F9C1C54250600E37313 /* WhatToDoViewController.swift in Sources */,
 				27718E7B1C5415D3008C42E4 /* Friend_Circle.xcdatamodeld in Sources */,
 				27718E751C5415D3008C42E4 /* FriendViewController.swift in Sources */,

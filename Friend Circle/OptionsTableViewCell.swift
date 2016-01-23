@@ -9,7 +9,7 @@
 import UIKit
 
 class OptionsTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var OptionsCell: UILabel!
     
     @IBOutlet weak var optionsImage: UIImageView!
@@ -18,11 +18,11 @@ class OptionsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
