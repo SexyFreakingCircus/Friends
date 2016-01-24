@@ -14,8 +14,9 @@ class WhatToDoViewController: UIViewController, UITableViewDataSource, UITableVi
     
     let CellIdentifier = "TableCellView"
     
-    let data = ["Eat", "Be Active", "Shop", "Nightlife", "Chill", "Arts", "Watch",  "Explore"]
+    let data = ["Eat", "Active", "Shop", "Nightlife", "Chill", "Arts", "Entertainment",  "Explore"]
     
+    var selected: [String] = []
     
     var checked: [Bool]!
     
@@ -45,13 +46,15 @@ class WhatToDoViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let cell = tableView.dequeueReusableCellWithIdentifier("OptionsCell", forIndexPath: indexPath) as! OptionsTableViewCell
         
-        let option = data[indexPath.row].componentsSeparatedByString(", ")
-        cell.OptionsCell.text = option.first
+        cell.OptionsCell.text = data[indexPath.row]
         
         if checked[indexPath.row] {
             cell.accessoryType = .Checkmark
+            selected.append(data[indexPath.row])
         } else {
             cell.accessoryType = .None
+            selected = arrayRemovingObject(data[indexPath.row], fromArray: selected)
+            
         }
         
         cell.optionsImage.image = UIImage(named: data[indexPath.row])
@@ -59,20 +62,16 @@ class WhatToDoViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func arrayRemovingObject<U: Equatable>(object: U, fromArray:[U]) -> [U] {
+        return fromArray.filter { return $0 != object }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ToYelpResults" {
+            let yelpViewController = segue.destinationViewController as! YelpResultsViewController
+            yelpViewController.selected = self.selected
+        }
     }
-    */
 
 }

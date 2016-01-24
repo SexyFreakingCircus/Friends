@@ -21,9 +21,7 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet var userView: UIView!
     
     var myGroupNames: [String] = ["Soccer", "CPE", "Other"]
-    
-    var businesses: [Business]!
-    
+        
     // Ref for db
     var myRootRef : Firebase!
     
@@ -38,16 +36,6 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
         // Setup delegate / datasource of friendCirclesCollectionView
         friendCirclesCollectionView.delegate = self
         friendCirclesCollectionView.dataSource = self
-        
-        Business.searchWithTerm("Thai", completion: { (businesses: [Business]!, error: NSError!) -> Void in
-            self.businesses = businesses
-            
-            for business in businesses {
-                print(business.name!)
-                print(business.address!)
-            }
-        })
-
         
     }
     
