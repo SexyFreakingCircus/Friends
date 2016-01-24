@@ -29,14 +29,14 @@
 
                         <tr ng-repeat="list in listings| filter:searchText">
                             <td colspan = "2" class="tableElements" ng-click="showDetails($index)">{{list.event}}</td>
-                            <td colspan = "2" class="tableElements" ng-click="showDetails($index)">{{list.time}}</td>
+                            <td colspan = "3" class="tableElements" ng-click="showDetails($index)">{{list.time}}</td>
                             <td class = "xTab"><span class ="x" ng-click="deleteListing(listings.indexOf(list))">&times</span></td>
                         </tr>
                     </table>
                 </div>
             </div>
     	<div class = "buttonWrap">
-	    	<button class = "createEvent" onclick="location.href='#'">
+	    	<button class = "createEvent" onclick="location.href='GroupSelect.html'">
 	    		Home
 	    	</button>
 	    </div>
