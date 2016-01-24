@@ -62,4 +62,10 @@ class AddNewGroupViewController: UIViewController {
         self.onDataAvailable?(data: data)
     }
     
+    
+    @IBAction func screenTapped(sender: AnyObject) {
+        view.endEditing(true)
+
+    }
+    
 }

@@ -144,6 +144,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="JNH-Qz-Fbl" appends="YES" id="9Rl-Dh-sj9"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Cjr-Fj-DxP"/>
                     <connections>
@@ -151,6 +155,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xYt-j8-XNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JNH-Qz-Fbl">
+                    <connections>
+                        <action selector="screenTapped:" destination="Iux-eM-MMA" id="HbM-RS-uFH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="766" y="1052"/>
         </scene>
@@ -384,7 +393,6 @@
                                         <connections>
                                             <outlet property="OptionsCell" destination="dmk-f2-Txv" id="Hd7-tX-28c"/>
                                             <outlet property="optionsImage" destination="0qi-ya-rNG" id="UAQ-gC-m7s"/>
-                                            <segue destination="jzE-bV-6PW" kind="push" id="9QF-iD-N3Z"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -426,11 +434,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YelpResultsTableViewCell" rowHeight="149" id="Dz4-yJ-1iS" customClass="YelpResultsTableViewCell" customModule="Friend_Circle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="149"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="YelpResultsTableViewCell" rowHeight="149" id="Dz4-yJ-1iS" customClass="YelpResultsTableViewCell" customModule="Friend_Circle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="149"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dz4-yJ-1iS" id="OA9-Bn-Asj">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="148.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="148.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fM5-zi-pPr">
@@ -462,6 +470,7 @@
                                             <outlet property="placeNameLabel" destination="fM5-zi-pPr" id="Aoy-64-E9w"/>
                                             <outlet property="placeRatingImageView" destination="6w2-YA-UFy" id="4pn-1c-KhW"/>
                                             <outlet property="posterImageView" destination="yGP-Ap-laY" id="bEw-dh-efJ"/>
+                                            <segue destination="jzE-bV-6PW" kind="push" id="ZAb-NP-rbB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
