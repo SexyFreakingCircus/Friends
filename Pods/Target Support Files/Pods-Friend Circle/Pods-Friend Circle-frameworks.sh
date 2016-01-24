@@ -84,8 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Friend Circle/AFNetworking.framework"
+  install_framework "Pods-Friend Circle/BDBOAuth1Manager.framework"
   install_framework "Pods-Friend Circle/Firebase.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Friend Circle/AFNetworking.framework"
+  install_framework "Pods-Friend Circle/BDBOAuth1Manager.framework"
   install_framework "Pods-Friend Circle/Firebase.framework"
 fi
