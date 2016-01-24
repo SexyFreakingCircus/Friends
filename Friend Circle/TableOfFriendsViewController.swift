@@ -18,6 +18,8 @@ class TableOfFriendsViewController: UIViewController, UITableViewDataSource, UIT
     // Ref for db
     var myRootRef : Firebase!
     
+    var profImage: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +37,8 @@ class TableOfFriendsViewController: UIViewController, UITableViewDataSource, UIT
         let cell = tableView.dequeueReusableCellWithIdentifier("TableOfFriendsViewCell", forIndexPath: indexPath) as! TableOfFriendsViewCell
         
         cell.nameLabel.text = myFriendsNames[indexPath.row]
+        cell.friendImageView.image = profImage
+        cell.friendImageView.contentMode = .ScaleToFill
         
         return cell
     }
@@ -56,6 +60,12 @@ class TableOfFriendsViewController: UIViewController, UITableViewDataSource, UIT
                     self?.myFriendsNames.append(data)
                     self?.tableView.reloadData()
                     //viewController.groupId =
+                }
+                
+                viewController.onDataAvailable2 = {[weak self]
+                    (myImage: UIImage) in
+                    self?.profImage = myImage
+                    self?.tableView.reloadData()
                 }
             }
         }

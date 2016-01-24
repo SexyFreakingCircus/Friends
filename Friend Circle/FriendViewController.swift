@@ -22,7 +22,7 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     var myGroupNames: [String] = []
     var myGroupIds: [String] = []
-    
+        
     // Ref for db
     var myRootRef : Firebase!
     var defaults : NSUserDefaults!
