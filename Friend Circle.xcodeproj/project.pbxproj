@@ -16,6 +16,7 @@
 		27718E881C5425D0008C42E4 /* TableOfFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E871C5425D0008C42E4 /* TableOfFriendsViewController.swift */; };
 		27718E8A1C54267B008C42E4 /* TableOfFriendsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E891C54267B008C42E4 /* TableOfFriendsViewCell.swift */; };
 		27718E8E1C54311F008C42E4 /* AddNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E8D1C54311F008C42E4 /* AddNewFriendViewController.swift */; };
+		FA5D09EF1C545DDF004ADE06 /* FriendCircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D09EE1C545DDF004ADE06 /* FriendCircleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		27718E871C5425D0008C42E4 /* TableOfFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfFriendsViewController.swift; sourceTree = "<group>"; };
 		27718E891C54267B008C42E4 /* TableOfFriendsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfFriendsViewCell.swift; sourceTree = "<group>"; };
 		27718E8D1C54311F008C42E4 /* AddNewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewFriendViewController.swift; sourceTree = "<group>"; };
+		FA5D09EE1C545DDF004ADE06 /* FriendCircleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCircleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				27718E891C54267B008C42E4 /* TableOfFriendsViewCell.swift */,
+				FA5D09EE1C545DDF004ADE06 /* FriendCircleCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				27718E881C5425D0008C42E4 /* TableOfFriendsViewController.swift in Sources */,
 				27718E8A1C54267B008C42E4 /* TableOfFriendsViewCell.swift in Sources */,
 				27718E7B1C5415D3008C42E4 /* Friend_Circle.xcdatamodeld in Sources */,
+				FA5D09EF1C545DDF004ADE06 /* FriendCircleCell.swift in Sources */,
 				27718E751C5415D3008C42E4 /* FriendViewController.swift in Sources */,
 				27718E731C5415D3008C42E4 /* AppDelegate.swift in Sources */,
 			);

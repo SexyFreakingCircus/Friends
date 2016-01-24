@@ -8,13 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FriendViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate {
 
+    // Main Container View of Content Below Navbar
+    @IBOutlet var friendBubblesContainerView: UIView!
+    
+    // Collection View With User Friend Circles
+    @IBOutlet var friendCirclesCollectionView: UICollectionView!
+    
+    // Bottom View With User Circle
+    @IBOutlet var userView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        configureButtons()
+        // Setup delegate / datasource of friendCirclesCollectionView
+        friendCirclesCollectionView.delegate = self
+        friendCirclesCollectionView.dataSource = self
         
     }
     override func didReceiveMemoryWarning() {
@@ -23,21 +34,35 @@ class ViewController: UIViewController {
     }
     
     
-    func thumbsUpButtonPressed() {
-        print("thumbs up button pressed")
+    func friendCirlceButtonPressed() {
+        print("Friend Cirlce Pressed")
+    }
+
+    func userCirlceButtonPressed() {
+        print("User Cirlce Pressed")
+    }
+
+    
+    // COLLECTION VIEW FUNCTIONS
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        // Return # of friend circles of user
+        return 3
     }
     
-    func configureButtons() {
+    // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        // Setup the the prototype cell indexPath
+        let cell=collectionView.dequeueReusableCellWithReuseIdentifier("FriendCircleCell", forIndexPath: indexPath) as! FriendCircleCell
         
-        let friendButton = UIButton(type: .Custom)
-        friendButton.frame = CGRectMake(160, 100, 50, 50)
-        friendButton.layer.cornerRadius = 0.5 * friendButton.bounds.size.width
-        friendButton.layer.masksToBounds = true
-        friendButton.setImage(UIImage(named:"black"), forState: .Normal)
-        friendButton.setTitle("nick", forState: .Normal)
-        friendButton.addTarget(self, action: "thumbsUpButtonPressed", forControlEvents: .TouchUpInside)
-        view.addSubview(friendButton)
+        // Set the details using the cell and the index path
         
+        // Log to console movie row
+        print("row \(indexPath.row)")
+        
+        // Done, lets do the next cell
+        return cell
     }
 
 }
