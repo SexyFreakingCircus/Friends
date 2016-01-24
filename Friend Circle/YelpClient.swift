@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 import AFNetworking
 import BDBOAuth1Manager
@@ -23,6 +24,9 @@ enum YelpSortMode: Int {
 
 class YelpClient: BDBOAuth1RequestOperationManager {
     var accessToken: String!
+    
+    var longitude: CLLocationDegrees = 0.0
+    var latitude: CLLocationDegrees = 0.0
     var accessSecret: String!
     
     class var sharedInstance : YelpClient {
@@ -52,6 +56,7 @@ class YelpClient: BDBOAuth1RequestOperationManager {
     }
     
     func searchWithTerm(term: String, completion: ([Business]!, NSError!) -> Void) -> AFHTTPRequestOperation {
+        
         return searchWithTerm(term, sort: nil, categories: nil, deals: nil, completion: completion)
     }
     
@@ -73,7 +78,7 @@ class YelpClient: BDBOAuth1RequestOperationManager {
             parameters["deals_filter"] = deals!
         }
         
-        print(parameters)
+//        print(parameters)
         
         return self.GET("search", parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             let dictionaries = response["businesses"] as? [NSDictionary]

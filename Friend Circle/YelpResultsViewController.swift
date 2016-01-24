@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class YelpResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class YelpResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -16,8 +18,31 @@ class YelpResultsViewController: UIViewController, UITableViewDelegate, UITableV
     
     var businesses: [Business] = []
     
+    let geocoder = CLGeocoder()
+    //    Need this as a property for our class because the coreLocation delegate
+    let locationManager = CLLocationManager()
+    var location: CLLocation?
+    var updatingLocation = false
+    var lastLocationError: NSError?
+    
+    var longitude: CLLocationDegrees = 0.0
+    var latitude: CLLocationDegrees = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let authStatus: CLAuthorizationStatus =
+        CLLocationManager.authorizationStatus()
+        if authStatus == .NotDetermined {
+            locationManager.requestWhenInUseAuthorization()
+            return
+        }
+        
+//        Gets the current location
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startUpdatingLocation()
+        startLocationManager()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -27,6 +52,64 @@ class YelpResultsViewController: UIViewController, UITableViewDelegate, UITableV
             callYelpAPI(elements)
         }
 
+    }
+    
+    //    Whenever we fail to get the location
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("didFailWithError \(error)")
+        
+        if (error.code == CLError.LocationUnknown.rawValue) {
+            return
+        }
+        //        We keep the last error we encountered
+        lastLocationError = error
+        stopLocationManager()
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let newLocation = locations.last! as CLLocation
+        print("didUpdateLocations \(newLocation)")
+        
+        longitude = newLocation.coordinate.longitude
+        latitude = newLocation.coordinate.latitude
+        
+        lastLocationError = nil
+        location = newLocation
+        placeNameFromLatLong()
+    }
+    
+    //    This will start the location gathering
+    func startLocationManager() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            updatingLocation = true
+        }
+    }
+    
+    //    This will stop the location gathering
+    func stopLocationManager() {
+        if (updatingLocation) {
+            locationManager.stopUpdatingLocation()
+            locationManager.delegate = nil
+            updatingLocation = false
+        }
+    }
+    
+    func placeNameFromLatLong() {
+        geocoder.reverseGeocodeLocation(location!, completionHandler: {(placemarks, error) in
+            if (error != nil) {
+                print("reverse geodcode fail: \(error!.localizedDescription)")
+            } else {
+                let placemark = placemarks! as [CLPlacemark]
+                let locationName = placemark[0].name
+                
+                print(locationName)
+                
+            }
+            
+        })
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -63,7 +146,7 @@ class YelpResultsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.dequeueReusableCellWithIdentifier("YelpResultsTableViewCell", forIndexPath: indexPath) as! YelpResultsTableViewCell
+//        let cell = tableView.dequeueReusableCellWithIdentifier("YelpResultsTableViewCell", forIndexPath: indexPath) as! YelpResultsTableViewCell
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
@@ -78,6 +161,7 @@ class YelpResultsViewController: UIViewController, UITableViewDelegate, UITableV
 //            }
             
             self.tableView.reloadData()
+            self.stopLocationManager()
         })
     }
 
