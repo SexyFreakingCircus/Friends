@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        // Set db for Firebase
+        //defaults.removeObjectForKey("userKey")
+
+        if let userKey = defaults.objectForKey("userKey") {
+            NSLog("User already has key")
+        } else {
+            if let myRootRef = Firebase(url:"https://sizzling-inferno-9040.firebaseio.com/") {
+                
+                let usersRef = myRootRef.childByAppendingPath("users")
+                let newUserRef = usersRef.childByAutoId()
+                let newUser = [""]
+                newUserRef.setValue(newUser)
+                defaults.setObject(newUserRef.key, forKey: "userKey")
+            
+            }
+        }
+        
         return true
     }
 

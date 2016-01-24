@@ -7,17 +7,25 @@
 //
 
 import UIKit
+import Firebase
 
 class AddNewGroupViewController: UIViewController {
     
     var onDataAvailable : ((data: String) -> ())?
+
+    // Ref for db
+    var myRootRef : Firebase!
     
     @IBOutlet weak var groupNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        var defaults = NSUserDefaults.standardUserDefaults()
+        let userKey = defaults.objectForKey("userKey") as! String
+        
+        myRootRef = Firebase(url:"https://sizzling-inferno-9040.firebaseio.com/users/\(userKey)/")
     }
     
     
@@ -27,8 +35,23 @@ class AddNewGroupViewController: UIViewController {
 
     @IBAction func doneButtonTouched(sender: AnyObject) {
         if self.groupNameTextField.text!.characters.count > 0 {
+            
+            let groupsRef = myRootRef.childByAppendingPath("groups")
+            
+            let newGroupRef = groupsRef.childByAutoId()
+            
+            if let myText = self.groupNameTextField.text {
+                let newGroup = ["name": myText]
+                newGroupRef.setValue(newGroup)
+                let groupId = newGroupRef.key
+            }
+            
+
+            
             sendData(self.groupNameTextField.text!)
             self.groupNameTextField.text = ""
+            
+            
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }

@@ -19,8 +19,24 @@ class AddNewFriendViewController: UIViewController {
     // Ref for db
     var myRootRef : Firebase!
     
+    var data : [NSDictionary]!
+    
+    var defaults : NSUserDefaults!
+    
+    var userKey : String!
+    var groupId : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        defaults = NSUserDefaults.standardUserDefaults()
+        let userKey = defaults.objectForKey("userKey")
+        
+        // Get db session
+        myRootRef = Firebase(url: "https://sizzling-inferno-9040.firebaseio.com/users/\(userKey)/groups/\(groupId)/friends/")
+        
+        // Setup
+        
 
         // Do any additional setup after loading the view.
     }

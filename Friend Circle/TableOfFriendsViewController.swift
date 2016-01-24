@@ -55,6 +55,7 @@ class TableOfFriendsViewController: UIViewController, UITableViewDataSource, UIT
                     (data: String) in
                     self?.myFriendsNames.append(data)
                     self?.tableView.reloadData()
+                    //viewController.groupId =
                 }
             }
         }

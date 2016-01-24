@@ -20,18 +20,46 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
     // Bottom View With User Circle
     @IBOutlet var userView: UIView!
     
-    var myGroupNames: [String] = ["Soccer", "CPE", "Other"]
+    var myGroupNames: [String] = []
+    var myGroupIds: [String] = []
     
     // Ref for db
     var myRootRef : Firebase!
+    var defaults : NSUserDefaults!
+    var userKey : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        defaults = NSUserDefaults.standardUserDefaults()
+        userKey = defaults.objectForKey("userKey") as! String
         
         // Set db for Firebase
-        myRootRef = Firebase(url:"https://docs-examples.firebaseio.com/")
+        myRootRef = Firebase(url:"https://sizzling-inferno-9040.firebaseio.com/users/\(userKey)/groups")
+        
+        myRootRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            if let groups = snapshot.children {
+                
+                for (var i = 0; i < Int(snapshot.childrenCount); i++) {
+                
+                    let group = groups.nextObject() as! FDataSnapshot
+                
+                    let name = group.value
+                
+                    self.myGroupIds.append(group.key as! String)
+                    self.myGroupNames.append(name.valueForKey("name") as! String)
+                
+                    NSLog("\(group)")
+                    NSLog("\(name)")
+    
+                }
+                
+            }
+            
+            self.friendCirclesCollectionView.reloadData()
+
+        })
         
         // Setup delegate / datasource of friendCirclesCollectionView
         friendCirclesCollectionView.delegate = self
@@ -59,8 +87,16 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         // Return # of friend circles of user
+//        if let value = myGroupNames.count as? Int {
+//            return value
+//        }
+//        else {
+//            return 1
+//        }
+        
         return myGroupNames.count
-    }
+        
+     }
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -68,6 +104,7 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FriendCircleCell", forIndexPath: indexPath) as! FriendCircleCell
         
         cell.groupNameLabel.text = myGroupNames[indexPath.row]
+        cell.groupId = myGroupIds[indexPath.row]
         
         // Done, lets do the next cell
         return cell
@@ -83,6 +120,7 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
                     (data: String) in
                     self?.myGroupNames.append(data)
                     self?.friendCirclesCollectionView.reloadData()
+//                    viewController.myRootRef = self!.myRootRef as! Firebase
                 }
             }
         }
