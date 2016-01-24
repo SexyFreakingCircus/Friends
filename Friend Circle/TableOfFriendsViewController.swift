@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 class TableOfFriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     var myFriendsNames: [String] = ["One Fish", "Two Fish", "Red Fish", "Blue Fish"]
+    
+    // Ref for db
+    var myRootRef : Firebase!
     
     override func viewDidLoad() {
         super.viewDidLoad()

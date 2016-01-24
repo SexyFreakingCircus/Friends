@@ -20,15 +20,25 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
     // Bottom View With User Circle
     @IBOutlet var userView: UIView!
     
+    // Ref for db
+    var myRootRef : Firebase!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        // Set db for Firebase
+        myRootRef = Firebase(url:"https://docs-examples.firebaseio.com/")
         
         // Setup delegate / datasource of friendCirclesCollectionView
         friendCirclesCollectionView.delegate = self
         friendCirclesCollectionView.dataSource = self
         
+        
+        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

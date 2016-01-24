@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AddNewFriendViewController: UIViewController {
     
@@ -14,6 +15,9 @@ class AddNewFriendViewController: UIViewController {
     
     @IBOutlet weak var newNameTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
+    
+    // Ref for db
+    var myRootRef : Firebase!
     
     override func viewDidLoad() {
         super.viewDidLoad()
