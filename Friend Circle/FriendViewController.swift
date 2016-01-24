@@ -39,12 +39,13 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
         friendCirclesCollectionView.delegate = self
         friendCirclesCollectionView.dataSource = self
         
-        Business.searchWithTerm("Thai", completion: { (businesses: [Business]!, error: NSError!) -> Void in
+        Business.searchWithTerm("Active Life", completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             
             for business in businesses {
                 print(business.name!)
-                print(business.address!)
+                print("\n")
+//                print(business.address!)
             }
         })
 
