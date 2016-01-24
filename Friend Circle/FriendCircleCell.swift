@@ -10,4 +10,7 @@ import UIKit
 
 class FriendCircleCell: UICollectionViewCell {
     
+    
+    @IBOutlet weak var groupNameLabel: UILabel!
+    
 }

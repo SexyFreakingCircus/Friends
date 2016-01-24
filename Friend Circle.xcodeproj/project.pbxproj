@@ -18,6 +18,7 @@
 		27718E881C5425D0008C42E4 /* TableOfFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E871C5425D0008C42E4 /* TableOfFriendsViewController.swift */; };
 		27718E8A1C54267B008C42E4 /* TableOfFriendsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E891C54267B008C42E4 /* TableOfFriendsViewCell.swift */; };
 		27718E8E1C54311F008C42E4 /* AddNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E8D1C54311F008C42E4 /* AddNewFriendViewController.swift */; };
+		27718E901C548E62008C42E4 /* AddNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E8F1C548E62008C42E4 /* AddNewGroupViewController.swift */; };
 		90364697D81D45F99F706AB7 /* Pods_Friend_Circle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044210F559E05822ADD59A1C /* Pods_Friend_Circle.framework */; };
 		FA5D09EF1C545DDF004ADE06 /* FriendCircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D09EE1C545DDF004ADE06 /* FriendCircleCell.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		27718E871C5425D0008C42E4 /* TableOfFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfFriendsViewController.swift; sourceTree = "<group>"; };
 		27718E891C54267B008C42E4 /* TableOfFriendsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfFriendsViewCell.swift; sourceTree = "<group>"; };
 		27718E8D1C54311F008C42E4 /* AddNewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewFriendViewController.swift; sourceTree = "<group>"; };
+		27718E8F1C548E62008C42E4 /* AddNewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewGroupViewController.swift; sourceTree = "<group>"; };
 		6D8980CD838AA4A3DBECD35E /* Pods-Friend Circle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friend Circle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Friend Circle/Pods-Friend Circle.release.xcconfig"; sourceTree = "<group>"; };
 		88BFDC4F19799C82FFCF7A63 /* Pods-Friend Circle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friend Circle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Friend Circle/Pods-Friend Circle.debug.xcconfig"; sourceTree = "<group>"; };
 		FA5D09EE1C545DDF004ADE06 /* FriendCircleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCircleCell.swift; sourceTree = "<group>"; };
@@ -98,11 +100,11 @@
 		27718E8B1C542880008C42E4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				01FE3FA51C54693300E37313 /* OptionsTableViewCell.swift */,
-				01FE3FA61C54693300E37313 /* WhatToDoViewController.swift */,
 				27718E741C5415D3008C42E4 /* FriendViewController.swift */,
+				27718E8F1C548E62008C42E4 /* AddNewGroupViewController.swift */,
 				27718E871C5425D0008C42E4 /* TableOfFriendsViewController.swift */,
 				27718E8D1C54311F008C42E4 /* AddNewFriendViewController.swift */,
+				01FE3FA61C54693300E37313 /* WhatToDoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -112,6 +114,7 @@
 			children = (
 				27718E891C54267B008C42E4 /* TableOfFriendsViewCell.swift */,
 				FA5D09EE1C545DDF004ADE06 /* FriendCircleCell.swift */,
+				01FE3FA51C54693300E37313 /* OptionsTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				01FE3FA81C54693300E37313 /* WhatToDoViewController.swift in Sources */,
 				27718E751C5415D3008C42E4 /* FriendViewController.swift in Sources */,
 				27718E731C5415D3008C42E4 /* AppDelegate.swift in Sources */,
+				27718E901C548E62008C42E4 /* AddNewGroupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

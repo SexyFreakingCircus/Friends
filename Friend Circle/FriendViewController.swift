@@ -20,6 +20,8 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
     // Bottom View With User Circle
     @IBOutlet var userView: UIView!
     
+    var myGroupNames: [String] = ["Soccer", "CPE", "Other"]
+    
     // Ref for db
     var myRootRef : Firebase!
     
@@ -34,8 +36,6 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
         // Setup delegate / datasource of friendCirclesCollectionView
         friendCirclesCollectionView.delegate = self
         friendCirclesCollectionView.dataSource = self
-        
-        
         
     }
     
@@ -59,21 +59,33 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         // Return # of friend circles of user
-        return 3
+        return myGroupNames.count
     }
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         // Setup the the prototype cell indexPath
-        let cell=collectionView.dequeueReusableCellWithReuseIdentifier("FriendCircleCell", forIndexPath: indexPath) as! FriendCircleCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FriendCircleCell", forIndexPath: indexPath) as! FriendCircleCell
         
-        // Set the details using the cell and the index path
-        
-        // Log to console movie row
-        print("row \(indexPath.row)")
+        cell.groupNameLabel.text = myGroupNames[indexPath.row]
         
         // Done, lets do the next cell
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        if segue.identifier == "GroupToAddGroup" {
+            
+            if let viewController = segue.destinationViewController as? AddNewGroupViewController {
+                // this funky syntax below is a swift closure
+                viewController.onDataAvailable = {[weak self]
+                    (data: String) in
+                    self?.myGroupNames.append(data)
+                    self?.friendCirclesCollectionView.reloadData()
+                }
+            }
+        }
     }
 
 }

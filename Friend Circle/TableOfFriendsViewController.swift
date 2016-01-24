@@ -46,13 +46,16 @@ class TableOfFriendsViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-
-        if let viewController = segue.destinationViewController as? AddNewFriendViewController {
-            // this funky syntax below is a swift closure
-            viewController.onDataAvailable = {[weak self]
-                (data: String) in
-                self?.myFriendsNames.append(data)
-                self?.tableView.reloadData()
+        
+        if segue.identifier == "FriendToAddFriend" {
+            
+            if let viewController = segue.destinationViewController as? AddNewFriendViewController {
+                // this funky syntax below is a swift closure
+                viewController.onDataAvailable = {[weak self]
+                    (data: String) in
+                    self?.myFriendsNames.append(data)
+                    self?.tableView.reloadData()
+                }
             }
         }
     }
