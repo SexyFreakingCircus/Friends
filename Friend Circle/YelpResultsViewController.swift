@@ -28,6 +28,8 @@ class YelpResultsViewController: UIViewController, UITableViewDelegate, UITableV
     var longitude: CLLocationDegrees = 0.0
     var latitude: CLLocationDegrees = 0.0
     
+    var chosenTitle: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -139,6 +141,14 @@ class YelpResultsViewController: UIViewController, UITableViewDelegate, UITableV
         cell.placeNameLabel.text = businesses[indexPath.row].name
         cell.placeDistanceLabel.text = businesses[indexPath.row].distance
         cell.placeRatingImageView.setImageWithURL(businesses[indexPath.row].ratingImageURL!)
+        
+        if let imageUrl = businesses[indexPath.row].imageURL! as? NSURL {
+            cell.posterImageView.setImageWithURL(imageUrl)
+        }
+        else {
+            cell.posterImageView.image = UIImage(named: "ic_grade")
+        }
+        
         cell.posterImageView.setImageWithURL(businesses[indexPath.row].imageURL!)
         
         
@@ -146,7 +156,9 @@ class YelpResultsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("YelpResultsTableViewCell", forIndexPath: indexPath) as! YelpResultsTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("YelpResultsTableViewCell", forIndexPath: indexPath) as! YelpResultsTableViewCell
+        
+        chosenTitle = cell.placeNameLabel.text!
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
@@ -163,6 +175,14 @@ class YelpResultsViewController: UIViewController, UITableViewDelegate, UITableV
             self.tableView.reloadData()
             self.stopLocationManager()
         })
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ResultsToInvite" {
+            
+            
+//            print(businesses[indexPath!.row].name
+        }
     }
 
 }
