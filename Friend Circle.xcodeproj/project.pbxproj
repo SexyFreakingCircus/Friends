@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01FE3FA71C54693300E37313 /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE3FA51C54693300E37313 /* OptionsTableViewCell.swift */; };
+		01FE3FA81C54693300E37313 /* WhatToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE3FA61C54693300E37313 /* WhatToDoViewController.swift */; };
 		27718E731C5415D3008C42E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E721C5415D3008C42E4 /* AppDelegate.swift */; };
 		27718E751C5415D3008C42E4 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E741C5415D3008C42E4 /* FriendViewController.swift */; };
 		27718E781C5415D3008C42E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27718E761C5415D3008C42E4 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01FE3FA51C54693300E37313 /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
+		01FE3FA61C54693300E37313 /* WhatToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatToDoViewController.swift; sourceTree = "<group>"; };
 		27718E6F1C5415D3008C42E4 /* Friend Circle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Friend Circle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27718E721C5415D3008C42E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27718E741C5415D3008C42E4 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		27718E8B1C542880008C42E4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				01FE3FA51C54693300E37313 /* OptionsTableViewCell.swift */,
+				01FE3FA61C54693300E37313 /* WhatToDoViewController.swift */,
 				27718E741C5415D3008C42E4 /* FriendViewController.swift */,
 				27718E871C5425D0008C42E4 /* TableOfFriendsViewController.swift */,
 				27718E8D1C54311F008C42E4 /* AddNewFriendViewController.swift */,
@@ -170,7 +176,9 @@
 				27718E881C5425D0008C42E4 /* TableOfFriendsViewController.swift in Sources */,
 				27718E8A1C54267B008C42E4 /* TableOfFriendsViewCell.swift in Sources */,
 				27718E7B1C5415D3008C42E4 /* Friend_Circle.xcdatamodeld in Sources */,
+				01FE3FA71C54693300E37313 /* OptionsTableViewCell.swift in Sources */,
 				FA5D09EF1C545DDF004ADE06 /* FriendCircleCell.swift in Sources */,
+				01FE3FA81C54693300E37313 /* WhatToDoViewController.swift in Sources */,
 				27718E751C5415D3008C42E4 /* FriendViewController.swift in Sources */,
 				27718E731C5415D3008C42E4 /* AppDelegate.swift in Sources */,
 			);
