@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Groups.css">
+    <title>SexyFreakingCircus</title>
+</head>
+<body ng-app="directoryApp">
+<div class="header">
+    <div class="row">
+        <h1>Studying</h1>
+    </div>
+    <div class="container">
+        <div class= "row" ng-controller="friendController">
+            <div class="col-md-6">
+                <h2 class="tableTitle">Friends</h2>
+                <div class="input-group" id="searchBar">
+                    <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+                    <input type="text" class="form-control" ng-model = "searchText">
+                </div>
+                <div class="tableWrapper">
+                    <table class="table table-striped table-hover">
+                        <tr>
+                            <th class = "tableHeader" colspan = "4">Name:</th>
+                        </tr>
+
+                        <tr>
+                        	<td><input type="button" value="Add Friend" ng-click="addListing(inputListing)">
+                        	</td>
+                        	<td colspan="3"> <input type="text" class="form-control" ng-model="inputListing">
+                        	</td>
+                        </tr>
+
+                        <tr ng-repeat="list in listings| filter:searchText">
+                            <td colspan = "3" class="tableElements" ng-click="showDetails($index)">{{list}}</td>
+                            <td class = "xTab"><span class ="x" ng-click="deleteListing(listings.indexOf(list))">&times</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        <div class= "row" ng-controller="friendController">
+            <div class="col-md-6">
+                <h2 class="tableTitle">What To Do</h2>
+                <div class="tableWrapper">
+                    <table class="table table-striped table-hover">
+                        <tr>
+                            <th class = "tableHeader" colspan = "3">To Do:</th>
+                        </tr>
+
+                        <tr>
+                        	<td colspan="2">Eat</td>
+                        	<td class = "checkBox"><input type="checkbox">
+                        	</td>
+                        </tr>
+                        
+                        <tr>
+                        	<td colspan="2">Be Active</td>
+                        	<td class = "checkBox"><input type="checkbox">
+                        	</td>
+                        </tr>
+
+                        <tr>
+                        	<td colspan="2">Shop</td>
+                        	<td class = "checkBox"><input type="checkbox">
+                        	</td>
+                        </tr>
+
+                        <tr>
+                        	<td colspan="2">Night Life</td>
+                        	<td class = "checkBox"><input type="checkbox">
+                        	</td>
+                        </tr>
+
+                        <tr>
+                        	<td colspan="2">Chill</td>
+                        	<td class = "checkBox"><input type="checkbox">
+                        	</td>
+                        </tr>
+
+                        <tr>
+                        	<td colspan="2">Arts</td>
+                        	<td class = "checkBox"><input type="checkbox">
+                        	</td>
+                        </tr>
+
+                        <tr>
+                        	<td colspan="2">Watch</td>
+                        	<td class = "checkBox"><input type="checkbox">
+                        	</td>
+                        </tr>
+
+                        <tr>
+                        	<td colspan="2">Explore</td>
+                        	<td class = "checkBox"><input type="checkbox">
+                        	</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+    	</div>
+    	<div class = "buttonWrap">
+	    	<button class = "createEvent" onclick="location.href='#'">
+	    		Create Event
+	    	</button>
+	    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+<script src="app.js"></script>
+<script src="friendController.js"></script>
+<script src="friendFactory.js"></script>
+</body>
+</html>
