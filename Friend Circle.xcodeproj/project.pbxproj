@@ -18,12 +18,14 @@
 		27718E881C5425D0008C42E4 /* TableOfFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E871C5425D0008C42E4 /* TableOfFriendsViewController.swift */; };
 		27718E8A1C54267B008C42E4 /* TableOfFriendsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E891C54267B008C42E4 /* TableOfFriendsViewCell.swift */; };
 		27718E8E1C54311F008C42E4 /* AddNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27718E8D1C54311F008C42E4 /* AddNewFriendViewController.swift */; };
+		90364697D81D45F99F706AB7 /* Pods_Friend_Circle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044210F559E05822ADD59A1C /* Pods_Friend_Circle.framework */; };
 		FA5D09EF1C545DDF004ADE06 /* FriendCircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D09EE1C545DDF004ADE06 /* FriendCircleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01FE3FA51C54693300E37313 /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
 		01FE3FA61C54693300E37313 /* WhatToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatToDoViewController.swift; sourceTree = "<group>"; };
+		044210F559E05822ADD59A1C /* Pods_Friend_Circle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Friend_Circle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27718E6F1C5415D3008C42E4 /* Friend Circle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Friend Circle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27718E721C5415D3008C42E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27718E741C5415D3008C42E4 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,8 @@
 		27718E871C5425D0008C42E4 /* TableOfFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfFriendsViewController.swift; sourceTree = "<group>"; };
 		27718E891C54267B008C42E4 /* TableOfFriendsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableOfFriendsViewCell.swift; sourceTree = "<group>"; };
 		27718E8D1C54311F008C42E4 /* AddNewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewFriendViewController.swift; sourceTree = "<group>"; };
+		6D8980CD838AA4A3DBECD35E /* Pods-Friend Circle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friend Circle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Friend Circle/Pods-Friend Circle.release.xcconfig"; sourceTree = "<group>"; };
+		88BFDC4F19799C82FFCF7A63 /* Pods-Friend Circle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friend Circle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Friend Circle/Pods-Friend Circle.debug.xcconfig"; sourceTree = "<group>"; };
 		FA5D09EE1C545DDF004ADE06 /* FriendCircleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCircleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90364697D81D45F99F706AB7 /* Pods_Friend_Circle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EDBD3F0AB1993477B658C53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				044210F559E05822ADD59A1C /* Pods_Friend_Circle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		27718E661C5415D3008C42E4 = {
 			isa = PBXGroup;
 			children = (
 				27718E711C5415D3008C42E4 /* Friend Circle */,
 				27718E701C5415D3008C42E4 /* Products */,
+				ABCEFBF9B52A8580C2C84E58 /* Pods */,
+				1EDBD3F0AB1993477B658C53 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +116,15 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		ABCEFBF9B52A8580C2C84E58 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88BFDC4F19799C82FFCF7A63 /* Pods-Friend Circle.debug.xcconfig */,
+				6D8980CD838AA4A3DBECD35E /* Pods-Friend Circle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -108,9 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27718E841C5415D3008C42E4 /* Build configuration list for PBXNativeTarget "Friend Circle" */;
 			buildPhases = (
+				78BCC95807787786C69C89D1 /* Check Pods Manifest.lock */,
 				27718E6B1C5415D3008C42E4 /* Sources */,
 				27718E6C1C5415D3008C42E4 /* Frameworks */,
 				27718E6D1C5415D3008C42E4 /* Resources */,
+				33C606CB254BF678530E5D32 /* Embed Pods Frameworks */,
+				91D2C45542284D93436D0F25 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,6 +193,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33C606CB254BF678530E5D32 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Friend Circle/Pods-Friend Circle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78BCC95807787786C69C89D1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		91D2C45542284D93436D0F25 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Friend Circle/Pods-Friend Circle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27718E6B1C5415D3008C42E4 /* Sources */ = {
@@ -289,6 +364,7 @@
 		};
 		27718E851C5415D3008C42E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88BFDC4F19799C82FFCF7A63 /* Pods-Friend Circle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Friend Circle/Info.plist";
@@ -300,6 +376,7 @@
 		};
 		27718E861C5415D3008C42E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D8980CD838AA4A3DBECD35E /* Pods-Friend Circle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Friend Circle/Info.plist";
