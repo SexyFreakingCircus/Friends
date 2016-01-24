@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Yu4-mP-srh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Yu4-mP-srh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -64,7 +64,7 @@
                                                 </view>
                                                 <connections>
                                                     <outlet property="groupNameLabel" destination="mc5-14-fUz" id="c6B-0j-0FW"/>
-                                                    <segue destination="7jU-bf-bQ1" kind="push" identifier="FriendCircleDetail" id="UTm-cg-M6l"/>
+                                                    <segue destination="7jU-bf-bQ1" kind="push" id="92o-E0-kmA"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -96,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="366"/>
+            <point key="canvasLocation" x="733" y="366"/>
         </scene>
         <!--Add New Group View Controller-->
         <scene sceneID="FxA-te-hHN">
@@ -365,7 +365,7 @@
                                         <rect key="frame" x="0.0" y="92" width="320" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FYs-vp-Fso" id="BI3-00-WRY">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="83.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="0qi-ya-rNG">
@@ -427,7 +427,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YelpResultsTableViewCell" rowHeight="149" id="Dz4-yJ-1iS" customClass="YelpResultsTableViewCell" customModule="Friend_Circle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="149"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="149"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dz4-yJ-1iS" id="OA9-Bn-Asj">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="148.5"/>
@@ -604,7 +604,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ES-Y4-VCh" id="Szj-42-RpQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bYH-C6-Co1">

@@ -94,7 +94,12 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
 //            return 1
 //        }
         
-        return myGroupNames.count
+        if let value = myGroupNames.count as? Int {
+            return value
+        }
+        else {
+            return 1
+        }
         
      }
     
@@ -104,7 +109,32 @@ class FriendViewController: UIViewController, UICollectionViewDataSource, UIColl
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FriendCircleCell", forIndexPath: indexPath) as! FriendCircleCell
         
         cell.groupNameLabel.text = myGroupNames[indexPath.row]
-        cell.groupId = myGroupIds[indexPath.row]
+//        cell.groupId = myGroupIds[indexPath.row]
+        
+        myRootRef = Firebase(url:"https://sizzling-inferno-9040.firebaseio.com/users/\(userKey)/groups")
+        
+        myRootRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            if let groups = snapshot.children {
+                
+                for (var i = 0; i < Int(snapshot.childrenCount); i++) {
+                    
+                    let group = groups.nextObject() as! FDataSnapshot
+                    
+                    let name = group.value
+                    
+                    self.myGroupIds.append(group.key as! String)
+                    
+                }
+                
+            }
+            
+            self.friendCirclesCollectionView.reloadData()
+            
+            cell.groupId = self.myGroupIds[indexPath.row]
+            
+        })
+        
+//        cell.groupId = myGroupIds[indexPath.row]
         
         // Done, lets do the next cell
         return cell

@@ -73,7 +73,9 @@ class AddNewFriendViewController: UIViewController, UIImagePickerControllerDeleg
     @IBAction func doneButtonTouched(sender: AnyObject) {
         if self.newNameTextField.text!.characters.count > 0 {
             sendData(self.newNameTextField.text!)
-            sendData2(self.imageView.image!)
+            if let myImage = self.imageView.image {
+                sendData2(self.imageView.image!)
+            }
             self.newNameTextField.text = ""
             self.dismissViewControllerAnimated(true, completion: nil)
         }
