@@ -123,8 +123,8 @@
 		27718E8C1C54288F008C42E4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				27718E891C54267B008C42E4 /* TableOfFriendsViewCell.swift */,
 				FA5D09EE1C545DDF004ADE06 /* FriendCircleCell.swift */,
+				27718E891C54267B008C42E4 /* TableOfFriendsViewCell.swift */,
 				01FE3FA51C54693300E37313 /* OptionsTableViewCell.swift */,
 				27718E9E1C54E1DA008C42E4 /* YelpResultsTableViewCell.swift */,
 			);
